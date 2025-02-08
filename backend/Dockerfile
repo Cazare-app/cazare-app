@@ -20,4 +20,4 @@ RUN ./gradlew installDist
 EXPOSE 8080
 
 # Comando para rodar o aplicativo
-CMD ["./build/install/backEnd/bin/backend"] 
+CMD ["./build/install/backend/bin/backend"] 
