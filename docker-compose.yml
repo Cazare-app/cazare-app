@@ -6,7 +6,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "5174:5173" 
+      - "5173:5173" 
     networks:
       - app-network
     depends_on:
@@ -14,7 +14,7 @@ services:
 
   backend:
     build:
-      context: ./backend
+      context: ./backEnd
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
