@@ -13,6 +13,8 @@ COPY build.gradle.kts .
 COPY settings.gradle.kts .
 COPY src ./src
 
+RUN chmod +x gradlew
+
 # Instalar dependências e compilar o projeto
 RUN ./gradlew installDist
 
