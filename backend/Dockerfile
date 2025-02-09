@@ -20,4 +20,5 @@ RUN ./gradlew installDist
 EXPOSE 8080
 
 # Comando para rodar o aplicativo
-CMD ["./build/install/backend/bin/backend"] 
+CMD ["./build/install/cazare-app/bin/cazare-app"]
+
