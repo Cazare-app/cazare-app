@@ -1,24 +1,18 @@
-# Usar a imagem oficial do JDK para rodar Kotlin
-FROM openjdk:17-jdk-slim
+FROM python:3.9-slim
 
-# Definir o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copiar os arquivos de build do Gradle
-COPY gradlew .
-COPY gradle ./gradle
+ENV FLASK_APP=app.py
+ENV FLASK_ENV=production  
+ENV PYTHONPATH=/app
 
-# Copiar os arquivos do projeto
-COPY build.gradle.kts .
-COPY settings.gradle.kts .
-COPY src ./src
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
-# Instalar dependências e compilar o projeto
-RUN ./gradlew installDist
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Expõe a porta do Ktor (geralmente 8080)
-EXPOSE 8080
+COPY . .
 
-# Comando para rodar o aplicativo
-CMD ["./build/install/cazare-app/bin/cazare-app"]
-
+CMD ["sh", "-c", "python scripts/init_db.py && flask run --host=0.0.0.0  --port=5000"]
