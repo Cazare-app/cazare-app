@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 
 const Header = styled.header`
      width: 100%;
-     height: 257px;
+     height: 220px;
     background: linear-gradient(-80deg, #8DA533 0%, #93A64C 50%, #748536 99%);
     display: flex;
     justify-content: space-between;
@@ -22,8 +22,8 @@ const LogoContainer = styled.div`
 `;
 
 const LogoImage = styled.img`
-    width: 50px;
-    height: auto;
+    width: 150px;
+    height: 60px;
 `;
 
 const ButtonContainer = styled.div`
@@ -51,7 +51,7 @@ const MyHeader: React.FC = () => {
             <LogoContainer>
                 <LogoImage src={logoCasa} alt="Logo casa" />
                 <LogoImage src={logo} alt="Logo" />
-                <h1>Cazare</h1>
+               
             </LogoContainer>
             <ButtonContainer>
                 <Button>Anuncie seu espaço</Button>
