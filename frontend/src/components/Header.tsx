@@ -1,12 +1,18 @@
-import React from "react";
+
 import styled from "styled-components";
+import logoCasa from "../assets/logocasa.png";
+import logo from "../assets/logo.png";
 
 const Header = styled.header`
+     width: 100%;
+     height: 220px;
     background: linear-gradient(-80deg, #8DA533 0%, #93A64C 50%, #748536 99%);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding:1rem;
+    position: fixed;
+    z-index: 1000;
 `;
 
 const LogoContainer = styled.div`
@@ -16,8 +22,8 @@ const LogoContainer = styled.div`
 `;
 
 const LogoImage = styled.img`
-    width: 50px;
-    height: auto;
+    width: 150px;
+    height: 60px;
 `;
 
 const ButtonContainer = styled.div`
@@ -43,9 +49,9 @@ const MyHeader: React.FC = () => {
     return (
         <Header>
             <LogoContainer>
-                <LogoImage src="/assets/logo casa.png" alt="Logo casa" />
-                <LogoImage src="/assets/logo.png" alt="Logo" />
-                <h1>Cazare</h1>
+                <LogoImage src={logoCasa} alt="Logo casa" />
+                <LogoImage src={logo} alt="Logo" />
+               
             </LogoContainer>
             <ButtonContainer>
                 <Button>Anuncie seu espaço</Button>
